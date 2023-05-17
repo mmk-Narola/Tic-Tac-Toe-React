@@ -45,7 +45,11 @@ const Board = () => {
       {checkWin ? (
         <>
           {checkWin} is winner{" "}
-          <button onClick={() => setState(Array(9).fill(null))}>
+          <button
+            onClick={() => {
+              setState(Array(9).fill(null)), setIsXTurn(true);
+            }}
+          >
             Start The Game Again
           </button>
         </>
@@ -54,7 +58,11 @@ const Board = () => {
           <h3>
             {" "}
             Player {isXTurn ? "X" : "O"} Move{" "}
-            <button onClick={() => setState(Array(9).fill(null))}>
+            <button
+              onClick={() => {
+                setState(Array(9).fill(null)), setIsXTurn(true);
+              }}
+            >
               Start The Game Again
             </button>
           </h3>
